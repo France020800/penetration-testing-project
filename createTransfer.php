@@ -77,7 +77,7 @@
         '$recipient', 
         $amount,
         '$causal');";
-        echo $sql;
+        //echo $sql;
         if ($conn->query($sql) === TRUE) {
             // echo "Data insert correctly";
         } else {
@@ -87,9 +87,8 @@
         $curl = curl_init();
 
         $request_url = "http://backend:8081?recipient=$recipient&from=$from&amount=$amount&causal=$causal";
-
-        //for testing purpouses
-        echo $request_url;
+        
+        //echo $request_url;
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $request_url,
